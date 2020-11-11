@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EFCore5RelationshipsExamples.Models.ManyToMany;
+using Microsoft.EntityFrameworkCore;
 
 namespace EFCore5RelationshipsExamples
 {
@@ -8,5 +9,8 @@ namespace EFCore5RelationshipsExamples
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=EFCore5RelationshipsExamples;Trusted_Connection=True;MultipleActiveResultSets=true");
         }
+
+        public DbSet<Actor> Actors { get; set; }
+        public DbSet<Movie> Movies { get; set; }
     }
 }
